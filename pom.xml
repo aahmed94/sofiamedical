@@ -64,9 +64,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.swagger.core.v3</groupId>
-			<artifactId>swagger-annotations</artifactId>
-			<version>2.1.5</version>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -83,7 +83,9 @@
 			<artifactId>commons-validator</artifactId>
 			<version>1.4.1</version>
 		</dependency>
-<!--		<dependency>-->
+
+
+		<!--		<dependency>-->
 <!--			<groupId>org.springframework.security</groupId>-->
 <!--			<artifactId>spring-security-test</artifactId>-->
 <!--			<scope>test</scope>-->
@@ -115,6 +117,7 @@
 							<output>src/main/gen</output>
 							<configOptions>
 								<dateLibrary>java8</dateLibrary>
+								<java8>true</java8>
 								<sourceFolder>dnaservice</sourceFolder>
 							</configOptions>
 						</configuration>

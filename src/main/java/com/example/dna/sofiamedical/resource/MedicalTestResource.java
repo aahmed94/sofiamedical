@@ -7,6 +7,7 @@ public class MedicalTestResource extends RepresentationModel<MedicalTestResource
     private PatientResource patientResource;
     private Double testResult;
     private OffsetDateTime testDate;
+    private String symptoms;
 
     public PatientResource getPatientResource() {
         return patientResource;
@@ -30,5 +31,13 @@ public class MedicalTestResource extends RepresentationModel<MedicalTestResource
 
     public void setTestDate(OffsetDateTime testDate) {
         this.testDate = testDate;
+    }
+
+    public String getSymptoms() {
+        return symptoms;
+    }
+
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
     }
 }

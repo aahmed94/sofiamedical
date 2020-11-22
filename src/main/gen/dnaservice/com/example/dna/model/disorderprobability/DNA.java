@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * DNA
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-16T22:41:19.121685+02:00[Europe/Sofia]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-20T00:27:41.170047+02:00[Europe/Sofia]")
 public class DNA   {
   @JsonProperty("code")
   private String code;

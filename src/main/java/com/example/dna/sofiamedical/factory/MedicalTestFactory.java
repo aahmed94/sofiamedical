@@ -2,6 +2,7 @@ package com.example.dna.sofiamedical.factory;
 
 import com.example.dna.sofiamedical.dto.MedicalTestDto;
 import com.example.dna.sofiamedical.dto.PatientDto;
+import com.example.dna.sofiamedical.dto.RedoMedicalTestDto;
 import com.example.dna.sofiamedical.model.MedicalTest;
 import com.example.dna.sofiamedical.model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,16 @@ public class MedicalTestFactory {
         medicalTest.setSymptoms(medicalTestDto.getSymptoms());
         medicalTest.setTestResult(testResult);
         medicalTest.setTestDate(OffsetDateTime.now());
-        medicalTest.setTestResult(testResult);
         medicalTest.setPatient(createPatient(medicalTestDto.getPatientDto(), medicalTest));
+
+        return medicalTest;
+    }
+
+    public MedicalTest updateMedicalTest(RedoMedicalTestDto redoMedicalTestDto, MedicalTest medicalTest, Double testResult) {
+        medicalTest.setSymptoms(medicalTest.getSymptoms());
+        medicalTest.setTestResult(testResult);
+        medicalTest.setTestDate(OffsetDateTime.now());
+        medicalTest.setPatient(createPatient(redoMedicalTestDto.getPatientDto(), medicalTest));
 
         return medicalTest;
     }

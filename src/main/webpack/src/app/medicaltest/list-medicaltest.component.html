@@ -1,0 +1,22 @@
+<mat-grid-list cols="3" rowHeight="1:1.2">
+    <mat-grid-tile *ngFor="let test of getResult()">
+        <mat-card class="example-card">
+            <mat-card-content>
+                <h3>Patient name: {{test.patientResource.name}}</h3>
+                <h3>Phone number: {{test.patientResource.phoneNumber}}</h3>
+                <div [hidden]=true #htmlElement>
+                    <h3>Patient age: {{test.patientResource.age}}</h3>
+                    <h3>Patient email: {{test.patientResource.email}}</h3>
+                    <h3>Patient dna: {{test.patientResource.dna}}</h3>
+                    <h3>Symptoms: {{test.symptoms}}</h3>
+                    <h3>Test date: {{buildDateString(test.testDate)}}</h3>
+                </div>
+                <h3>Test result: {{test.testResult}}</h3>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button #buttonLabel (click)="infoToggle(htmlElement, buttonLabel)">See more</button>
+                <button mat-button>Redo test</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

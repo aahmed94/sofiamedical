@@ -1,0 +1,78 @@
+<form #postForm="ngForm" (ngSubmit)="onSubmitPost(postForm.value)">
+            <div class="form-group">
+                <label for="name">Patient name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    required
+                    ngModel
+                    name="name"
+                />
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone number</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="phoneNumber"
+                    required
+                    ngModel
+                    name="phoneNumber"
+                />
+            </div>
+            <div class="form-group">
+                <label for="age">Patient's age</label>
+                <input
+                    type="number"
+                    class="form-control"
+                    id="age"
+                    required
+                    ngModel
+                    name="age"
+                />
+            </div>
+            <div class="form-group">
+                <label for="email">Patient's email</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                    ngModel
+                    name="email"
+                />
+            </div>
+            <div class="form-group">
+                <label for="dnaCode">DNA code</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="dnaCode"
+                    required
+                    ngModel
+                    name="dnaCode"
+                />
+            </div>
+            <div class="form-group">
+                <label for="symptoms">Symptoms</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="symptoms"
+                    required
+                    ngModel
+                    name="symptoms"
+                />
+            </div>
+            <div class="mat-button">
+                <button mat-button class="btn-primary">Submit</button>
+            </div>
+            <div class="card">
+                <mat-card>
+                    <mat-card-content>
+                        <h3>Test result: <span *ngIf="newMedicalTestResult > -1">{{newMedicalTestResult}}</span></h3>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+</form>

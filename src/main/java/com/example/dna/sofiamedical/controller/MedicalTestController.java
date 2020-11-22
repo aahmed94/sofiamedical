@@ -2,6 +2,7 @@ package com.example.dna.sofiamedical.controller;
 
 import com.example.dna.sofiamedical.assembler.MedicalTestAssembler;
 import com.example.dna.sofiamedical.dto.MedicalTestDto;
+import com.example.dna.sofiamedical.dto.RedoMedicalTestDto;
 import com.example.dna.sofiamedical.model.MedicalTest;
 import com.example.dna.sofiamedical.resource.MedicalTestResource;
 import com.example.dna.sofiamedical.service.TestService;
@@ -13,12 +14,12 @@ import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/medical-test", produces = MediaType.APPLICATION_JSON_VALUE)
 public class MedicalTestController {
 
@@ -55,6 +56,14 @@ public class MedicalTestController {
     @PostMapping(value = "/create")
     public ResponseEntity<Double> createMedicalTest(@RequestBody MedicalTestDto medicalTestDto) {
         Double testResult = testService.getTestResult(medicalTestDto);
+
+        return ResponseEntity.ok(testResult);
+    }
+
+    @PutMapping(value = "/{test-correlationId}/redo")
+    public ResponseEntity<Double> redoMedicalTest(@RequestBody RedoMedicalTestDto redoMedicalTestDto,
+                                                  @PathVariable(value = "test-correlationId") String correlationId) {
+        Double testResult = testService.redoMedicalTest(redoMedicalTestDto, correlationId);
 
         return ResponseEntity.ok(testResult);
     }

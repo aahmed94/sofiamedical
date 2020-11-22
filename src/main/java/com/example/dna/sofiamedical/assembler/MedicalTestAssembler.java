@@ -26,6 +26,7 @@ public class MedicalTestAssembler extends RepresentationModelAssemblerSupport<Me
         medicalTestResource.setPatientResource(createPatientResource(medicalTest.getPatient()));
         medicalTestResource.setTestResult(medicalTest.getTestResult());
         medicalTestResource.setTestDate(medicalTest.getTestDate());
+        medicalTestResource.setSymptoms(medicalTest.getSymptoms());
 
         return medicalTestResource;
     }
